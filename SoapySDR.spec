@@ -37,7 +37,6 @@ Vendor and platform neutral SDR support library.
 %setup -n %{name}-soapy-sdr-%{version}
 
 %build
-mkdir build
 cmake3 . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 make %{?_smp_mflags}
 

@@ -1,13 +1,13 @@
 Name:           SoapySDR
 Version:	%{VERSION}
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Vendor and platform neutral SDR support library.
 License:        Boost Software Licence
 Group:          Development/Libraries/C and C++
 Url:            https://github.com/pothosware/SoapySDR/wiki
 Source:         %{name}-%{version}.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
-BuildRequires:  cmake3
+BuildRequires:  cmake
 BuildRequires:  gcc-c++
 BuildRequires:	python-devel
 BuildRequires:	swig
@@ -37,7 +37,7 @@ Vendor and platform neutral SDR support library.
 %setup -n %{name}-soapy-sdr-%{version}
 
 %build
-cmake3 . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
+cmake . -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr
 make %{?_smp_mflags}
 
 %check
@@ -59,6 +59,7 @@ ldconfig
 %files
 %defattr(-,root,root,-)
 %doc LICENSE_1_0.txt README.md
+%{_bindir}/SoapySDRUtil
 %{_libdir}/libSoapySDR.so.0.6
 %{_libdir}/libSoapySDR.so.0.6.1
 %{_mandir}/man1/SoapySDRUtil.1.gz
@@ -66,7 +67,6 @@ ldconfig
 
 %files devel
 %defattr(-,root,root)
-%{_bindir}/SoapySDRUtil
 %{_includedir}/SoapySDR
 %{_libdir}/libSoapySDR.so
 %{_libdir}/pkgconfig/SoapySDR.pc

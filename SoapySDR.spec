@@ -1,6 +1,6 @@
 Name:           SoapySDR
 Version:	%{VERSION}
-Release:        2%{?dist}
+Release:        1%{?dist}
 Summary:        Vendor and platform neutral SDR support library.
 License:        Boost Software Licence
 Group:          Development/Libraries/C and C++
@@ -60,8 +60,7 @@ ldconfig
 %defattr(-,root,root,-)
 %doc LICENSE_1_0.txt README.md
 %{_bindir}/SoapySDRUtil
-%{_libdir}/libSoapySDR.so.0.6
-%{_libdir}/libSoapySDR.so.0.6.1
+%{_libdir}/libSoapySDR.so.*
 %{_mandir}/man1/SoapySDRUtil.1.gz
 
 

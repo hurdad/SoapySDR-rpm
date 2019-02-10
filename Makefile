@@ -1,5 +1,5 @@
 # SoapySDR
-version = 0.6.1
+version = 0.7.1
 name = SoapySDR
 full_name = $(name)-$(version)
 download_url = "https://github.com/pothosware/$(name)/archive/soapy-sdr-$(version).tar.gz"
